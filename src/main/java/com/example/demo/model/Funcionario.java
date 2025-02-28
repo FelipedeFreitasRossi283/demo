@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Funcionario {
+    private Integer idFuncionario;
     private int comissaoPorVenda;
     private String nome;
     private String CPF;
