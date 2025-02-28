@@ -7,46 +7,44 @@ import com.example.demo.model.Funcionario;
 
 
 public class BancoFuncionario {
-        private List<Funcionario> funcionario;
+        private List<Funcionario>funcionario;
 
         public BancoFuncionario() {
             this.funcionario = new ArrayList<>();
         }
 
         // Insere um novo produto na lista
-        public void insert(Funcionario p) {
-            funcionario.add(p);
+        public void insert(Funcionario f) {
+            funcionario.add(f);
         }
 
-        // Busca um produto pelo ID
         public Funcionario findOne(int id) {
-            for (Funcionario p : funcionario) {
-                if (p.getIdFuncionario() == id) {
-                    return p;
+            for (Funcionario f : funcionario) {
+                if (f.getIdFuncionario() == id) {
+                    return f;
                 }
             }
-            return null; // Retorna null se não encontrar
+            return null;
         }
 
-        // Retorna todos os produtos cadastrados
+
         public List<Funcionario> findAll() {
             return new ArrayList<>(funcionario);
         }
 
-        // Atualiza um produto existente na lista
-        public boolean update(Funcionario p) {
+        public boolean update(Funcionario f) {
             for (int i = 0; i < funcionario.size(); i++) {
-                if (funcionario.get(i).getIdFuncionario() == p.getIdFuncionario()) {
-                    funcionario.set(i, p);
-                    return true; // Retorno indicando que a atualização foi feita
+                if (funcionario.get(i).getIdFuncionario() == f.getIdFuncionario()) {
+                    funcionario.set(i, f);
+                    return true;
                 }
             }
-            return false; // Retorna falso se o produto não foi encontrado
+            return false;
         }
 
-        // Remove um produto pelo ID
+
         public boolean delete(int id) {
-            return funcionario.removeIf(p -> p.getIdFuncionario() == id);
+            return funcionario.removeIf(f -> f.getIdFuncionario() == id);
         }
     }
 

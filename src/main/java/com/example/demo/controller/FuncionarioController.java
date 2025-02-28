@@ -8,7 +8,7 @@ import java.util.List;
 public class FuncionarioController {
 
         BancoFuncionario bc = new BancoFuncionario();
-        public List<Funcionario> getAllClientes() {
+        public List<Funcionario> getAllFuncionario() {
             return bc.findAll();
         }
 

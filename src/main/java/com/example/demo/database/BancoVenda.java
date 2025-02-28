@@ -25,26 +25,23 @@ public class BancoVenda {
                     return p;
                 }
             }
-            return null; // Retorna null se não encontrar
+            return null;
         }
 
-        // Retorna todos os produtos cadastrados
         public List<Venda> findAll() {
             return new ArrayList<>(venda);
         }
 
-        // Atualiza um produto existente na lista
         public boolean update(Venda p) {
             for (int i = 0; i < venda.size(); i++) {
                 if (venda.get(i).getIdVenda() == p.getIdVenda()) {
                     venda.set(i, p);
-                    return true; // Retorno indicando que a atualização foi feita
+                    return true;
                 }
             }
-            return false; // Retorna falso se o produto não foi encontrado
+            return false;
         }
 
-        // Remove um produto pelo ID
         public boolean delete(int id) {
             return venda.removeIf(p -> p.getIdVenda() == id);
         }

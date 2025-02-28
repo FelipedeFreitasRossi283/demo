@@ -12,26 +12,25 @@ import java.util.List;
 public class VendaController {
 
         BancoVenda bcoVendas = new BancoVenda();
-        BancoFuncionario bcoClientes = new BancoFuncionario();
+        BancoFuncionario bcoFuncionario = new BancoFuncionario();
         BancoProduto bcoProdutos = new BancoProduto();
 
         public List<Venda> getAllVendas() {
             return bcoVendas.findAll();
         }
 
+
         public Boolean save(Venda v) {
-            List<Funcionario> clientesCadastrados = bcoClientes.findAll();
+            List<Funcionario> funcionarioCadastrados = bcoFuncionario.findAll();
             List<Produto> produtosCadastrados = bcoProdutos.findAll();
 
-            Funcionario clienteEnviado = v.getComissaoPorVenda();
+            Funcionario funcionarioEnviado = v.getComissaoPorVenda();
             List<Produto> produtoEnviados = v.getProduto();
 
-            // verifica se o cliente está dentro da lista
-            if (bcoClientes.findOne(clienteEnviado.getIdCliente()) == null){
+            if (bcoFuncionario.findOne(funcionarioEnviado.getIdFuncionario()) == null){
                 return false;
             }
 
-            // verifica se os produtos enviados estão dentro da lista
             for (Produto p : produtoEnviados){
                 if (bcoProdutos.findOne(p.getIdProduto()) == null){
                     return false;

@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.database.BancoProduto;
 import com.example.demo.model.Produto;
 
@@ -7,14 +8,13 @@ import java.util.List;
 
 public class ProdutoController {
 
-        BancoProduto bp = new BancoProduto();
+    BancoProduto bc = new BancoProduto();
 
-        public List<Produto> getAllProduto() {
-            return bp.findAll();
-        }
-
-        public Boolean save(Produto p) {
-            bp.insert(p);
-            return true;
-        }
+    public void inserirNoBanco(Produto p) {
+        bc.insert(p);
     }
+
+    public List<Produto> pegarTodosOsProdutos() {
+        return bc.findAll();
+    }
+}
