@@ -1,0 +1,1 @@
+Professor, tentei fazer junto com o Myky... Porem eu nao estou conseguindo entender diversos erros; Estamos no meio da aula da faculdade tentando fazer e nao esta dando certo. Obrigado pela compreensão. 
